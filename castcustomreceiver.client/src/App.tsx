@@ -3,8 +3,9 @@ import './App.css';
 function App() {
 
     const context = cast.framework.CastReceiverContext.getInstance();
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const playerManager = context.getPlayerManager();
+
+    console.log(playerManager.broadcastStatus);
 
     context.start();
 
