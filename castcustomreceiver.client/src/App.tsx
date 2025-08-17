@@ -19,14 +19,14 @@ function App() {
 
     console.log('Registering Custom Message Listener');
 
+    console.log(options);
+
+    context.start(options);
+
     context.addCustomMessageListener(CHANNEL, function (event) {
         console.log(event);
         playerManager.pause();
     });
-
-    console.log(options);
-
-    context.start(options);
 
     return (
         <div></div>
