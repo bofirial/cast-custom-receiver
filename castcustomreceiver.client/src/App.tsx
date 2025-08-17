@@ -17,23 +17,19 @@ function App() {
     options.disableIdleTimeout = false;
     options.versionCode = 2;
 
+    console.log('Registering Custom Message Listener');
+
     context.addCustomMessageListener(CHANNEL, function (event) {
         console.log(event);
         playerManager.pause();
     });
 
-    //{
-    //    customNamespaces: { 'urn:x-cast:rogueshambo': cast.framework.system.MessageType.STRING },
-    //    disableIdleTimeout: false,
-    //        versionCode: 1
-    //}
+    console.log(options);
+
     context.start(options);
 
     return (
-        <div>
-            <h1 id="tableLabel">Weather forecast</h1>
-            <p>This component demonstrates fetching data from the server.</p>
-        </div>
+        <div></div>
     );
 }
 
