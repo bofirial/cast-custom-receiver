@@ -9,11 +9,15 @@ function App() {
 
     const options = new cast.framework.CastReceiverOptions();
 
+    const CHANNEL = 'urn:x-cast:rogueshambo';
+
+    options.customNamespaces = Object.assign({});
+    options.customNamespaces[CHANNEL] = cast.framework.system.MessageType.STRING;
+
     options.disableIdleTimeout = false;
-    options.customNamespaces = { 'urn:x-cast:rogueshambo': cast.framework.system.MessageType.STRING };
     options.versionCode = 2;
 
-    context.addCustomMessageListener('urn:x-cast:rogueshambo', function (event) {
+    context.addCustomMessageListener(CHANNEL, function (event) {
         console.log(event);
         playerManager.pause();
     });
